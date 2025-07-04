@@ -1,0 +1,31 @@
+# Node 依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript 编译产物
+dist/
+build/
+*.tsbuildinfo
+
+# Jest 测试覆盖率
+coverage/
+*.lcov
+
+# VSCode 配置
+.vscode/
+
+# WebStorm 配置
+.idea/
+
+# Mac 系统文件
+.DS_Store
+
+# 环境变量
+.env
+.env.*
+
+# 日志文件
+*.log
