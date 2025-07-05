@@ -1,7 +1,7 @@
-import OrderManager from '../OrderManager';
+import OrderManager from '../orderManager';
 import { OrderType } from '../enums';
 import { sleep } from '../utils';
-import {vipFirstOrderPriority} from "../OrderPriorityStrategy";
+import {vipFirstOrderPriority} from "../orderPriorityStrategy";
 
 describe('麦当劳订单系统端到端测试', () => {
     let orderManager: OrderManager;

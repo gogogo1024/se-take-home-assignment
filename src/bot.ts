@@ -1,8 +1,8 @@
-// src/Bot.ts
+// src/bot.ts
 import {BotStatus, OrderStatus} from './enums';
 import {sleep} from './utils';
-import {Order} from './Order';
-import OrderManager from './OrderManager';
+import {Order} from './order';
+import OrderManager from './orderManager';
 import {RetryableError, NonRetryableError} from './errors';
 import {MAX_RETRY_COUNT} from './constants';
 

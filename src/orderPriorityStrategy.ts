@@ -1,5 +1,5 @@
-// src/OrderPriorityStrategy.ts
-import { Order } from './Order';
+// src/orderPriorityStrategy.ts
+import { Order } from './order';
 import { OrderType } from './enums';
 
 export type OrderPriorityStrategy = (a: Order, b: Order) => number;

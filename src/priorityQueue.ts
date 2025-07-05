@@ -1,5 +1,5 @@
-import {OrderPriorityStrategy} from "./OrderPriorityStrategy";
-import {Order} from "./Order";
+import {OrderPriorityStrategy} from "./orderPriorityStrategy";
+import {Order} from "./order";
 export class PriorityQueue<T extends Order> {
     private heap: T[] = [];
     private compare: (a: T, b: T) => number;

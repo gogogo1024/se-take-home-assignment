@@ -1,10 +1,10 @@
 // src/__tests__/botErrorHandling.test.ts
-import OrderManager from '../OrderManager';
+import OrderManager from '../orderManager';
 import {OrderType, OrderStatus} from '../enums';
 import {RetryableError} from '../errors';
 import {MAX_RETRY_COUNT} from '../constants';
-import {vipFirstOrderPriority} from "../OrderPriorityStrategy";
-import Bot from '../Bot';
+import {vipFirstOrderPriority} from "../orderPriorityStrategy";
+import Bot from '../bot';
 
 describe('Bot 异常处理分支测试', () => {
     let orderManager: OrderManager;

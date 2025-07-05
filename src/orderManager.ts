@@ -1,10 +1,10 @@
-// src/OrderManager.ts
+// src/orderManager.ts
 import {EventEmitter} from 'events';
 import {OrderType, OrderStatus} from './enums';
-import {Order} from './Order';
-import Bot from './Bot';
-import {PriorityQueue} from './PriorityQueue';
-import {OrderPriorityStrategy, defaultOrderPriority} from './OrderPriorityStrategy';
+import {Order} from './order';
+import Bot from './bot';
+import {PriorityQueue} from './priorityQueue';
+import {OrderPriorityStrategy, defaultOrderPriority} from './orderPriorityStrategy';
 
 class OrderManager extends EventEmitter {
     private orders: PriorityQueue<Order>;
