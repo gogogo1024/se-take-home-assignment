@@ -1,5 +1,5 @@
-import {OrderPriorityStrategy} from "./orderPriorityStrategy";
 import {Order} from "./order";
+
 export class PriorityQueue<T extends Order> {
     private heap: T[] = [];
     private compare: (a: T, b: T) => number;
@@ -35,6 +35,14 @@ export class PriorityQueue<T extends Order> {
         return this.heap.length;
     }
 
+    getItems(): T[] {
+        return [...this.heap];
+    }
+
+    toSortedArray(): T[] {
+        return [...this.heap].sort(this.compare);
+    }
+
     private heapifyUp(index?: number) {
         index = index ?? this.heap.length - 1;
         while (index > 0) {
@@ -47,6 +55,22 @@ export class PriorityQueue<T extends Order> {
             }
         }
     }
+
+    // toSortedArray(): T[] {
+    //     const copy = [...this.heap];
+    //     const result: T[] = [];
+    //     while (copy.length > 0) {
+    //         // 构建临时堆
+    //         let minIndex = 0;
+    //         for (let i = 1; i < copy.length; i++) {
+    //             if (this.compare(copy[i], copy[minIndex]) < 0) {
+    //                 minIndex = i;
+    //             }
+    //         }
+    //         result.push(copy[minIndex]);
+    //         copy.splice(minIndex, 1);
+    //     }
+    //     return result;
 
     private heapifyDown(index?: number) {
         index = index ?? 0;
@@ -66,25 +90,5 @@ export class PriorityQueue<T extends Order> {
             [this.heap[index], this.heap[swap]] = [this.heap[swap], this.heap[index]];
             index = swap;
         }
-    }
-
-    getItems(): T[] {
-        return [...this.heap];
-    }
-    toSortedArray(): T[] {
-        const copy = [...this.heap];
-        const result: T[] = [];
-        while (copy.length > 0) {
-            // 构建临时堆
-            let minIndex = 0;
-            for (let i = 1; i < copy.length; i++) {
-                if (this.compare(copy[i], copy[minIndex]) < 0) {
-                    minIndex = i;
-                }
-            }
-            result.push(copy[minIndex]);
-            copy.splice(minIndex, 1);
-        }
-        return result;
     }
 }
